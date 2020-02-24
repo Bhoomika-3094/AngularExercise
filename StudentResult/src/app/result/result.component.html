@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-header"><h4>Result</h4></div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr>
+                <th>Subject</th>
+                <th>Marks</th>
+                <th>Passing Marks</th>
+            </tr>
+            <tr *ngFor="let result1 of marksheet">
+                <td>{{result1.Subject}}</td>
+                <td>{{result1.mark}}</td>
+                <td>{{result1.passingmark}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Total Marks
+                </td>
+                <td>
+                    {{totalmarks}}
+                </td>
+                <td>
+                    {{recievedmarks}}
+                </td>
+            </tr>
+            <tr >
+                <td colspan="3">Total percentage {{ percentage}} %</td>
+            </tr>
+        </table>
+    </div>
+</div>
