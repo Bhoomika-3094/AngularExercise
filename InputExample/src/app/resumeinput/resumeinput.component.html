@@ -1,0 +1,35 @@
+<p>Resume Using @input</p>
+<div class="card card-border">
+    <div class="card-header">
+        <h1>Resume</h1>
+    </div>
+    <div class="card-body"> 
+         <table class="table table-bordered">
+            <tr>
+                <td>Name</td>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <td>Designation</td>
+                <td>{{designation}}</td>
+            </tr>
+            <tr >
+                <td>Education</td>
+                <td>
+                    <ul *ngFor="let edulist of edu" >
+                        <li>{{edulist}}</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>Skills</td>
+                <td>
+                    <ul *ngFor="let skilllist of skills">
+                        <li>{{skilllist}}</li>
+                    </ul>
+                </td>
+            </tr>
+         </table>
+    </div>
+</div>
+
