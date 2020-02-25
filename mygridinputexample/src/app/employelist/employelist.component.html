@@ -1,0 +1,20 @@
+<!-- <div class="card card-bordered">
+    <div class="card-header">Employee List</div>
+    <div class="card-body">
+        <table class="table table-border">
+            <tr>
+                <th>Emp Id</th>
+                <th>Emp Name</th>
+                <th>Salary</th>
+            </tr>
+            <tr *ngFor="let emp of employeelist">
+                <td>{{emp.Id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.salary}}</td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+<div class="row">
+    <app-mygrid [headerlist]="headername" [employeelist]="empinfo"></app-mygrid>
+</div>

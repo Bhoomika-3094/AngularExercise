@@ -1,0 +1,16 @@
+
+<div class="card card-bordered">
+    <div class="card-header">Employee List</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <tr >
+                <th *ngFor="let header of headerlist">{{header}}</th>
+            </tr>
+            <tr *ngFor="let emp of employeelist">
+                <td>{{emp.Id}}</td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.salary}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
