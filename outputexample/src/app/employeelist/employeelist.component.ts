@@ -12,7 +12,7 @@ export class EmployeelistComponent implements OnInit {
   employeelist : Employee[]= [];
   getindex:any[]=[];
   deleted:any;
-  hideshow:string ="hide"
+  hideshow:boolean= false;
 
   constructor() { }
 
@@ -25,14 +25,13 @@ export class EmployeelistComponent implements OnInit {
 
   getname(i:any){
   //alert(i);
-  this.hideshow ="show";
+  this.hideshow = true;
   let gotvalue=this.employeelist[i];
   this.getindex.push(gotvalue);
   }
 
   delete(index:any){
     this.getindex.splice(index,1);
-  
   }
 
 
