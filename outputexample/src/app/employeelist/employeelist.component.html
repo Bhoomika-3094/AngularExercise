@@ -1,0 +1,22 @@
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-8">
+            <div class="form-group">
+                <input type="text" class="form-control" (getvalue)="getname">
+            </div>
+        </div>
+    </div>
+</div> -->
+<app-mygridoutputexample [headerlist]="headerpart" [employeelist]="employeelist" (getvalue)="getname($event)"></app-mygridoutputexample>
+<table class="table table-bordered {{hideshow}}">
+    <tr>
+        <th *ngFor="let header of headerpart,let i=index">{{header}}</th>
+    </tr>
+    <tr *ngFor="let employee of getindex">
+        <td >{{employee.empname}}</td>
+        <td >{{employee.empdes}}</td>
+        <td >{{employee.empsal}}</td>
+        <td><button class="btn btn-danger" (click)="delete(i)">x</button></td>
+    </tr>
+</table>
+
