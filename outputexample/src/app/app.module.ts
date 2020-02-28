@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { FailedmessageComponent } from './failedmessage/failedmessage.component';
 import { MygridoutputexampleComponent } from './mygridoutputexample/mygridoutputexample.component';
 import { EmployeelistComponent } from './employeelist/employeelist.component';
+import { PassedmessageComponent } from './passedmessage/passedmessage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FailedmessageComponent,
     MygridoutputexampleComponent,
-    EmployeelistComponent
+    EmployeelistComponent,
+    PassedmessageComponent
   ],
   imports: [
     BrowserModule

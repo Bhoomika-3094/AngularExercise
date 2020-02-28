@@ -8,11 +8,12 @@
     </div>
 </div> -->
 <app-mygridoutputexample [headerlist]="headerpart" [employeelist]="employeelist" (getvalue)="getname($event)"></app-mygridoutputexample>
+<app-passedmessage [result]="getresult" [color]="color"></app-passedmessage>
 <table class="table table-bordered " *ngIf="hideshow"  >
     <tr>
-        <th *ngFor="let header of headerpart,let i=index">{{header}}</th>
+        <th *ngFor="let header of headerpart">{{header}}</th>
     </tr>
-    <tr *ngFor="let employee of getindex">
+    <tr *ngFor="let employee of getindex,let i=index">
         <td >{{employee.empname}}</td>
         <td >{{employee.empdes}}</td>
         <td >{{employee.empsal}}</td>
