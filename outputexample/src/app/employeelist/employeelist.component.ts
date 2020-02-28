@@ -32,6 +32,10 @@ export class EmployeelistComponent implements OnInit {
 
   delete(index:any){
     this.getindex.splice(index,1);
+    if(this.getindex.length==0){
+     this.hideshow = false;
+    }
+    
   }
 
 
