@@ -1,0 +1,20 @@
+<p>parent-component works!</p>
+<app-child-component></app-child-component>
+<div class="row">
+    <div class="col-8">
+        <div class="row">
+            <div class="col-4">
+                <input type="text" class="form-control" #firstvalue>
+            </div>
+            <div class="col-4">
+                <input class="form-control" type="text" #secondvalue>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <button class="btn btn-success mr-1" (click)="plush()">Plush</button>
+        <button class="btn btn-danger mr-1" (click)="minus()">Minus</button>
+        <button class="btn btn-info mr-1" (click)="divide()">Division</button>
+        <button class="btn btn-warning" (click)="multy()">Multiplication</button>
+        </div>
+    </div>
+</div>
