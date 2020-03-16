@@ -1,0 +1,35 @@
+<h1>Signup Form</h1>
+<form (ngSubmit)="save(frm)" #frm=ngForm>
+    <div class="form-group">
+        <div class="">
+            <input type="text" class="form form-control" placeholder="Enter First Name" required name="frstname" #frstname ngModel>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form form-control" placeholder="Enter Second Name" name="scnd" required #scnd ngModel>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form form-control" placeholder="Enter Email ID" required name="email" #email ngModel>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="form form-control" required ngmodel>
+                    <option value="-1">---State--</option>
+                    <option [ngValue]="state" *ngFor="let state of states">
+                        {{state}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="form form-control" required>
+                    <option value="">---city--</option>
+                    <option  *ngFor="let city of city" [ngValue]="city.value">{{city.cityname}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success ">Submit</button>
+</form>
