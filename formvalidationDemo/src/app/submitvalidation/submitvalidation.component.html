@@ -1,0 +1,55 @@
+<h1>Signup Form</h1>
+<form (ngSubmit)="save(frm)" #frm=ngForm>
+    <div class="form-group">
+        <div class="">
+            <input type="text" class="form form-control" placeholder="Enter First Name" required pattern="^[a-zA-Z]+$" name="frstname" [(ngModel)]="firstnm" #frstname=ngModel>
+        </div>
+        <div *ngIf="frstname.invalid && frstname.touched">
+            <p *ngIf="frstname.errors['required']">First Name is mendetory</p>
+            <p *ngIf="frstname.errors['pattern']">First Name must be in alphabates</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form form-control" placeholder="Enter Second Name" name="scnd" required pattern="^[a-zA-Z]+$ " [(ngModel)]="secondnm" #scnd=ngModel>
+        <div *ngIf="scnd.invalid && scnd.touched">
+            <p *ngIf="scnd.errors['required']">Second Name is mendetory</p>
+            <p *ngIf="scnd.errors['pattern']">Second Name must be in alphabates</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="email" class="form form-control" placeholder="Enter Email ID" required name="email" [(ngModel)]="emailfield" #email=ngModel>
+        <div *ngIf="email.invalid && email.touched">
+            <p *ngIf="email.errors['required']">Email is mendetory.</p>
+            <p *ngIf="email.errors['email']">Invalid Email Address.</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="text" class="form form-control" placeholder="Enter Phone No." required name="phone" [(ngModel)]="phoneno" #phone=ngModel pattern="^[0-9]+$" maxlength="10" minlength="10">
+        <div *ngIf="phone.invalid && phone.touched">
+            <p *ngIf="phone.errors['required']">Phone No. is mendetory.</p>
+            <p *ngIf="phone.errors['pattern']">Phone No. must be in number.</p>
+            <p *ngIf="phone.errors['minlength']">Phone No. must be in 10 digit.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="form form-control" required ngmodel>
+                    <option value="-1">---State--</option>
+                    <option [ngValue]="state" *ngFor="let state of states">
+                        {{state}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <select class="form form-control" required>
+                    <option value="">---city--</option>
+                    <option  *ngFor="let city of city" [ngValue]="city.value">{{city.cityname}}</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-success ">Submit</button>
+</form>
