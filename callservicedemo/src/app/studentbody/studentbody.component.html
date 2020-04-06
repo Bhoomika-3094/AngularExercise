@@ -1,0 +1,17 @@
+<p>studentbody works!</p>
+<form (ngSubmit)="save(frm)" #frm=ngForm>
+    <div class="row">
+        <div class="col-6">
+            <input class="form-control" type="text" placeholder="Enter Student Name" name="stdnm" #stdnm=ngModel [(ngModel)]="studentnm">
+        </div>
+        <div class="col-6">
+            <input type="text" class="form-control" placeholder="Enter class name" name="clsname" #clsname=ngModel [(ngModel)]="classname">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <button class="btn btn-success">submit</button>
+        </div>
+    </div>
+
+</form>

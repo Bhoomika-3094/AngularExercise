@@ -1,0 +1,16 @@
+<p>studentlist works!</p>
+<div class="container">
+    <app-studentbody (isSaved)="refreshData($event)"></app-studentbody>
+    <table class="table table-bordered" >
+        <tr>
+            <th>ID</th>
+            <th>Student Name</th>
+            <th>Class Name</th>
+        </tr>
+        <tr *ngFor="let student of studentlist">
+            <td>{{student.id}}</td>
+            <td>{{student.studentname}}</td>
+            <td>{{student.className}}</td>
+        </tr>
+    </table>
+</div>
