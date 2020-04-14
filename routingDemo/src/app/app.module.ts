@@ -7,6 +7,14 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { StudentlistComponent } from './studentlist/studentlist.component';
 import { ContactUSComponent } from './contact-us/contact-us.component';
+import { SigninComponent } from './signin/signin.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { StudentService} from '../app/service/student.service';
+import { from } from 'rxjs';
+import { StudentformComponent } from './studentform/studentform.component';
+import { AdminComponent } from './admin/admin.component';
+import { MessageComponent } from './message/message.component';
 
 @NgModule({
   declarations: [
@@ -14,13 +22,19 @@ import { ContactUSComponent } from './contact-us/contact-us.component';
     HomeComponent,
     AboutUsComponent,
     StudentlistComponent,
-    ContactUSComponent
+    ContactUSComponent,
+    SigninComponent,
+    StudentformComponent,
+    AdminComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

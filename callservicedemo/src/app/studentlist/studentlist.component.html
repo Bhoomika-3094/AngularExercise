@@ -1,16 +1,18 @@
 <p>studentlist works!</p>
 <div class="container">
-    <app-studentbody (isSaved)="refreshData($event)"></app-studentbody>
+    <app-studentbody ></app-studentbody>
     <table class="table table-bordered" >
         <tr>
             <th>ID</th>
             <th>Student Name</th>
             <th>Class Name</th>
+            <th>Action</th>
         </tr>
         <tr *ngFor="let student of studentlist">
             <td>{{student.id}}</td>
             <td>{{student.studentname}}</td>
             <td>{{student.className}}</td>
+            <td><button class="btn-success btn mr-1" (click)="edit(student.id)">Edit</button><button class="btn-danger btn" (click)="delete(student.id)">Delete</button></td>
         </tr>
     </table>
 </div>

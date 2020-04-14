@@ -7,6 +7,7 @@ import { StudentlistComponent } from './studentlist/studentlist.component';
 import {StudentService} from '../app/service/student.service';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { from } from 'rxjs';
 import { StudentbodyComponent } from './studentbody/studentbody.component';
 
@@ -20,7 +21,8 @@ import { StudentbodyComponent } from './studentbody/studentbody.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]

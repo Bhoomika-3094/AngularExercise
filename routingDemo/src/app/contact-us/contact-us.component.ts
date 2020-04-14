@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import  { Location } from '@angular/common';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUSComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location :Location) { }
 
   ngOnInit() {
+  }
+  back():void{
+    this.location.back();
   }
 
 }

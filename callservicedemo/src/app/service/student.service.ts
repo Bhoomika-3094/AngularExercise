@@ -14,17 +14,22 @@ export class StudentService {
  
   getstudentlist() : Observable<Student[]>{
     console.log("service called ...!")
-    const headers = new HttpHeaders()
-  .set("X-CustomHeader", "custom header value");
-    let handleError:any = "not working";
-    return this.httpclient.get<Student[]>("http://localhost:3000/student",{headers})
-    .pipe(
-      retry(2),
-      catchError(handleError)
-    );
+    return this.httpclient.get<Student[]>("http://localhost:3000/student")
+    // .pipe(
+    //   retry(2),
+    //   catchError(handleError)
+    // );
   }
 
   poststudent(stud:Student): Observable<Student>{
     return this.httpclient.post<Student>("http://localhost:3000/student",stud);
   }
+
+  deletestudent(id:number) : Observable<void>{
+    return this.httpclient.delete<void>("http://localhost:3000/student"+"/"+id);
+  }
+  getBatchById(id:number) : Observable<Student>{
+    return this.httpclient.get<Student>("http://localhost:3000/student"+"/"+id);
+  }
+
 }

@@ -1,1 +1,21 @@
-<p>studentlist works!</p>
+
+<!-- <app-studentform></app-studentform> -->
+<button class="btn btn-info m-2" (click)="add()">Add Student</button>
+<table class="table-bordered table">
+    <tr>
+        <th>ID</th>
+        <th>Student Name</th>
+        <th>Class Name</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let student of studentlist">
+        <td>{{student.id}}</td>
+        <td>{{student.studentname}}</td>
+        <td>{{student.className}}</td>
+        <td><button class="btn btn-success m-1" (click)="edit(student.id)">Edit</button><button class="btn btn-danger" (click)="delete(student.id)">Delete</button></td>
+    </tr>
+</table>
+<p class="m-1">
+    <button class="btn btn-info" (click)="back()">Back</button>
+    <!-- <button class="btn btn-info" (click)="forward()">Next</button> -->
+</p>

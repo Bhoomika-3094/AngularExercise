@@ -1,17 +1,35 @@
 <p>studentbody works!</p>
 <form (ngSubmit)="save(frm)" #frm=ngForm>
     <div class="row">
-        <div class="col-6">
-            <input class="form-control" type="text" placeholder="Enter Student Name" name="stdnm" #stdnm=ngModel [(ngModel)]="studentnm">
+        <div class="col-4">
+            <div class="form-group"><input class="form-control" type="text" required name="id" #id=ngModel [(ngModel)]="idnum" placeholder="Enter id"></div>
+            
         </div>
-        <div class="col-6">
-            <input type="text" class="form-control" placeholder="Enter class name" name="clsname" #clsname=ngModel [(ngModel)]="classname">
+        <div class="col-4">
+            <div class="form-group">
+                <input class="form-control" type="text" placeholder="Enter Student Name" required name="studentname" #studentname=ngModel [(ngModel)]="studentnm">
+                <!-- <div>
+                    <p *ngIf="studentname.errors['required']">First Name is mendetory</p>
+                </div> -->
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Enter class name" name="className" #className=ngModel [(ngModel)]="classname">
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-4">
             <button class="btn btn-success">submit</button>
+            <button class="btn button btn-info m-1">Update</button>
         </div>
     </div>
-
 </form>
+<table>
+    <tr *ngFor="let data of getarray">
+        <td>{{data.id}}</td>
+        <td>{{data.studentname}}</td>
+        <td>{{data.className}}</td>
+    </tr>
+</table>
