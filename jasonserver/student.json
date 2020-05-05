@@ -1,14 +1,32 @@
 {
-  "student": [
+  "login": [
     {
-      "studentname": "bhoomika",
-      "className": "Angular",
-      "id": 4
+      "id": 1,
+      "username": "bhoomika",
+      "password": "1234",
+      "name": "bhoomika",
+      "role": "admin",
+      "token": "bhoomika1234"
     },
     {
+      "id": 2,
+      "username": "milan",
+      "password": "1234",
+      "name": "milan",
+      "role": "user",
+      "token": "milan1234"
+    }
+  ],
+  "student": [
+    {
+      "id": 4,
+      "studentname": "bhoomi",
+      "className": "Angular"
+    },
+    {
+      "id": 5,
       "studentname": "milan",
-      "className": "Java",
-      "id": 5
+      "className": "Javadf"
     },
     {
       "id": "6",
@@ -22,8 +40,8 @@
     },
     {
       "id": "31",
-      "studentname": "ffdfd",
-      "className": "dfdsfdsf"
+      "studentname": "Parth",
+      "className": "Electrical"
     },
     {
       "id": "20",

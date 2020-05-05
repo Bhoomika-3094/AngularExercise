@@ -1,2 +1,19 @@
 <h1>Sign in</h1>
+<div class="container">
+    <form [formGroup]="sigingroup" (ngSubmit)="login()">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Enter Username" name="username" formControlName="username">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="Enter password" name="password" formControlName="password">
+                </div>
+            </div>
+        </div>
+    <button class="btn btn-success">Signin</button>
+    </form>
+</div>
 

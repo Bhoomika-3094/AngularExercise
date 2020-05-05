@@ -11,10 +11,13 @@ import { SigninComponent } from './signin/signin.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentService} from '../app/service/student.service';
+import {AuthenticationService} from './auth/authentication.service';
 import { from } from 'rxjs';
 import { StudentformComponent } from './studentform/studentform.component';
 import { AdminComponent } from './admin/admin.component';
 import { MessageComponent } from './message/message.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { MessageComponent } from './message/message.component';
     SigninComponent,
     StudentformComponent,
     AdminComponent,
-    MessageComponent
+    MessageComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,7 @@ import { MessageComponent } from './message/message.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [StudentService],
+  providers: [StudentService,AuthenticationService,AuthGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

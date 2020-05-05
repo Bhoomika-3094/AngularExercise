@@ -47,16 +47,10 @@ export class StudentformComponent implements OnInit {
     )
   }
   save():void{
-    this.details = 'Sending Message...';
-    this.sending = true;
-    setTimeout(() => {
-      this.sending = false;
-      this.closePopup();
-    }, 1000);
-    console.log("hiii");
     let stud : Student = this.studentform.value;
     console.log(stud);
     this.service.poststudentlist(stud).subscribe(
+     
       (data : Student) =>{
         console.log(data);
         this.router.navigate(['admin/studentlist']);
@@ -64,16 +58,11 @@ export class StudentformComponent implements OnInit {
     )
     
   }
-  closePopup() {
-    // Providing a `null` value to the named outlet
-    // clears the contents of the named outlet
-    this.router.navigate([{ outlets: { popup: null }}]);
-  }
   update():void{
     let stud : Student = this.studentform.value;
     this.service.update(stud).subscribe(
       (data : Student) =>{
-        alert(stud.id);
+        alert("Student list update with id:" + stud.id);
         this.router.navigate(['admin/studentlist']);
         this.save();
       }

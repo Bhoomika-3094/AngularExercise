@@ -8,11 +8,13 @@ import {SigninComponent}from './signin/signin.component';
 import {StudentformComponent} from '../app/studentform/studentform.component';
 import {AdminComponent} from '../app/admin/admin.component';
 import { MessageComponent } from './message/message.component';
+import { LogoutComponent } from './logout/logout.component';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path:'aboutus', component : AboutUsComponent },
-  { path:'admin', component :AdminComponent,
+  { path:'admin', component :AdminComponent, canActivate : [AuthGuardService],
     children : [
       { path:'studentlist', component :StudentlistComponent},  
       {
@@ -24,13 +26,10 @@ const routes: Routes = [
       {path : 'studentedit',component : StudentformComponent }
     ]
     },
-    {
-      path: 'save',
-      component: StudentformComponent,
-      outlet: 'popup'
-    },
+   
   { path:'contctus', component: ContactUSComponent },
   { path:'sigin', component : SigninComponent},
+  { path:'sigout', component : LogoutComponent},
 ];
 
 @NgModule({
