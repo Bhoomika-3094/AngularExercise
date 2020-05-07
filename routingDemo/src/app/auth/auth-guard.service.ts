@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, Router } from '@angular/router';
+import { CanActivate, Router, CanActivateChild } from '@angular/router';
 import { AuthenticationService } from '../auth/authentication.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuardService implements CanActivate {
+export class AuthGuardService implements CanActivate,CanActivateChild {
 
   constructor(private route : Router, private authentivate : AuthenticationService ) { }
+
   canActivate(route: import("@angular/router").ActivatedRouteSnapshot, state: import("@angular/router").RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
   //  alert(state.url);
     if(this.authentivate.islogging){
@@ -18,5 +19,9 @@ export class AuthGuardService implements CanActivate {
     this.route.navigate(['sigin']);
     // alert("admin security");
     // return false;
+  }
+  canActivateChild(childRoute: import("@angular/router").ActivatedRouteSnapshot, state: import("@angular/router").RouterStateSnapshot): boolean | import("@angular/router").UrlTree | import("rxjs").Observable<boolean | import("@angular/router").UrlTree> | Promise<boolean | import("@angular/router").UrlTree> {
+    alert("activate child called!!");
+    return true;
   }
 }

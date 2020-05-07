@@ -42,9 +42,12 @@ export class SigninComponent implements OnInit {
                 }
                 else{
                   this.authentication.islogging = true;
+                    // console.log(JSON.stringify(users));
+                  sessionStorage.setItem("loggedInUser",JSON.stringify(users));
                   this.route.navigate([this.authentication.loginsuccesspage],{queryParams : {name : users.name,city : 'pune'} });
                   alert("you are sucessfully login");
                 }
+              
                
               }
     
